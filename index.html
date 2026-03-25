@@ -1,16 +1,41 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="ltr">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>DomainDepth — Premium Domains For Sale</title>
+<title>DomainDepth - Premium Domains For Sale</title>
 <style>
-:root{--bg:#04060f;--bg2:#060a18;--surface:#0a1020;--border:rgba(56,189,248,0.12);--border2:rgba(56,189,248,0.28);--sky:#38bdf8;--sky2:#7dd3fc;--indigo:#6366f1;--violet:#8b5cf6;--emerald:#10b981;--amber:#f59e0b;--text:#f8fafc;--text2:#94a3b8;--text3:#475569;--text4:#1e293b;--glow:rgba(56,189,248,0.35)}
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;overflow-x:hidden}
-.grid-bg{position:fixed;inset:0;background:linear-gradient(rgba(56,189,248,0.025) 1px,transparent 1px),linear-gradient(90deg,rgba(56,189,248,0.025) 1px,transparent 1px);background-size:60px 60px;z-index:0;pointer-events:none}
-.vignette{position:fixed;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 50%,transparent 40%,rgba(4,6,15,0.85) 100%);z-index:0;pointer-events:none}
+/* ================= COLORS SYSTEM ================= */
+:root{
+  --bg:#04060f;
+  --bg2:#060a18;
+  --surface:#0a1020;
+  --border:rgba(255,255,255,0.06);
+  --border2:rgba(56,189,248,0.25);
+  --text:#e5e7eb;
+  --text2:#a1a8b3;
+  --text3:#6b7280;
+  --text4:#374151;
+  --sky:#38bdf8;
+  --sky2:#0ea5e9;
+  --indigo:#6366f1;
+  --violet:#8b5cf6;
+  --emerald:#10b981;
+  --amber:#f59e0b;
+  --glow:rgba(56,189,248,0.45);
+}
+
+/* ================= GLOBAL ================= */
+body{
+  margin:0;
+  background:
+    radial-gradient(circle at 20% 10%, rgba(56,189,248,0.08), transparent 40%),
+    radial-gradient(circle at 80% 90%, rgba(139,92,246,0.08), transparent 40%),
+    var(--bg);
+  color:var(--text);
+  font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+}
+
+/* ================= ORBS & ANIMATIONS ================= */
 .orb{position:absolute;border-radius:50%;filter:blur(90px);pointer-events:none}
 .orb1{width:600px;height:600px;background:radial-gradient(circle,rgba(56,189,248,0.13),transparent 70%);top:-200px;left:-150px;animation:od1 12s ease-in-out infinite}
 .orb2{width:450px;height:450px;background:radial-gradient(circle,rgba(99,102,241,0.1),transparent 70%);bottom:-80px;right:-80px;animation:od2 14s ease-in-out infinite}
@@ -18,228 +43,135 @@ body{background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSy
 @keyframes od1{0%,100%{transform:translate(0,0)}40%{transform:translate(35px,-25px)}70%{transform:translate(-15px,35px)}}
 @keyframes od2{0%,100%{transform:translate(0,0)}35%{transform:translate(-40px,25px)}65%{transform:translate(25px,-35px)}}
 @keyframes od3{0%,100%{transform:translate(0,0)}50%{transform:translate(25px,-40px)}}
+
+/* ================= NAV & HERO ================= */
 nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:0 40px;height:64px;display:flex;align-items:center;justify-content:space-between;background:rgba(4,6,15,0.88);backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
 .logo{font-weight:900;font-size:20px;letter-spacing:-1px;color:var(--text);text-decoration:none;display:flex;align-items:center;gap:8px}
 .logo-icon{width:28px;height:28px;background:linear-gradient(135deg,var(--sky),var(--indigo));border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0}
 .logo em{color:var(--sky);font-style:normal}
-.nav-links{display:flex;gap:4px}
-.nav-link{font-family:monospace;font-size:12px;color:var(--text3);text-decoration:none;padding:6px 14px;border-radius:100px;transition:all 0.2s}
-.nav-link:hover{color:var(--sky2);background:rgba(56,189,248,0.07)}
 .nav-right{display:flex;align-items:center;gap:10px}
 .nav-count{font-family:monospace;font-size:11px;color:var(--text3);background:var(--surface);border:1px solid var(--border);padding:5px 12px;border-radius:100px}
 .nav-count b{color:var(--sky2)}
 .btn-nav{background:var(--sky);color:var(--bg);padding:8px 20px;border-radius:100px;font-size:13px;font-family:monospace;font-weight:700;text-decoration:none;transition:all 0.3s}
 .btn-nav:hover{background:var(--sky2);box-shadow:0 0 24px var(--glow)}
-.hero{position:relative;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:100px 32px 80px;overflow:hidden;z-index:2;text-align:center}
+
+.hero{position:relative;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:100px 32px 60px;overflow:hidden;z-index:2;text-align:center}
 .ticker-strip{width:100%;overflow:hidden;margin-bottom:44px;padding:9px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);background:rgba(56,189,248,0.018)}
 .ticker-inner{display:flex;width:max-content;animation:tick 45s linear infinite}
 .t-item{display:flex;align-items:center;gap:8px;padding:0 24px;font-family:monospace;font-size:12px;color:var(--text3);white-space:nowrap}
 .t-dn{color:var(--text2)}.t-pr{color:var(--emerald)}
 @keyframes tick{to{transform:translateX(-50%)}}
+
 .eyebrow{display:inline-flex;align-items:center;gap:9px;background:rgba(56,189,248,0.06);border:1px solid var(--border2);border-radius:100px;padding:7px 18px;font-family:monospace;font-size:11px;color:var(--sky2);margin-bottom:26px;letter-spacing:0.4px}
 .live-dot{width:7px;height:7px;background:var(--emerald);border-radius:50%;box-shadow:0 0 7px var(--emerald);animation:blink 1.5s ease infinite}
 @keyframes blink{0%,100%{opacity:1}50%{opacity:0.4}}
-.hero-h1{font-weight:900;font-size:clamp(46px,8.5vw,96px);line-height:0.96;letter-spacing:-3px;margin-bottom:26px}
-.h-line1{display:block;color:var(--text)}
-.h-line2{display:block;background:linear-gradient(120deg,var(--sky),var(--sky2) 30%,var(--indigo) 65%,var(--violet));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;background-size:200%;animation:gs 5s ease infinite alternate}
+
+.hero-h1{font-weight:900;font-size:clamp(46px,8.5vw,96px);line-height:0.96;letter-spacing:-3px;margin-bottom:20px}
+.h-line2{background:linear-gradient(120deg,var(--sky),var(--sky2) 30%,var(--indigo) 65%,var(--violet));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;background-size:200%;animation:gs 5s ease infinite alternate}
 @keyframes gs{from{background-position:0%}to{background-position:100%}}
-.h-line3{display:block;font-size:0.5em;font-weight:400;letter-spacing:-1px;color:var(--text);opacity:0.3;margin-top:8px}
-.hero-sub{font-size:clamp(14px,2vw,17px);color:var(--text2);max-width:540px;line-height:1.8;margin-bottom:48px;font-weight:300}
-.hero-sub strong{color:var(--sky2);font-weight:500}
+
+.hero-sub{font-size:clamp(14px,2vw,17px);color:var(--text2);max-width:540px;line-height:1.8;margin-bottom:40px;font-weight:300}
 .stats-row{display:flex;margin-bottom:48px;border:1px solid var(--border);border-radius:24px;overflow:hidden}
 .stat-item{padding:18px 32px;text-align:center;flex:1;position:relative}
 .stat-item+.stat-item::before{content:'';position:absolute;left:0;top:22%;height:56%;width:1px;background:var(--border)}
-.stat-num{font-weight:900;font-size:clamp(22px,3.5vw,34px);background:linear-gradient(135deg,var(--sky),var(--sky2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.stat-num{font-weight:900;font-size:clamp(22px,3.5vw,34px);background:linear-gradient(135deg,var(--sky),var(--sky2));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
 .stat-lbl{font-family:monospace;font-size:10px;color:var(--text3);margin-top:4px;letter-spacing:0.3px}
-.cta-row{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
-.btn-hero{padding:15px 38px;border-radius:100px;font-family:monospace;font-size:13px;text-decoration:none;border:none;cursor:pointer;transition:all 0.3s;letter-spacing:0.3px}
-.btn-primary{background:linear-gradient(135deg,var(--sky),var(--indigo));color:#fff;box-shadow:0 4px 28px var(--glow)}
-.btn-primary:hover{transform:translateY(-3px);box-shadow:0 8px 48px var(--glow)}
-.btn-secondary{background:transparent;color:var(--text);border:1px solid var(--border2)}
-.btn-secondary:hover{border-color:var(--sky2);background:rgba(56,189,248,0.07);transform:translateY(-2px)}
-.scroll-hint{position:absolute;bottom:32px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:8px;opacity:0.3}
-.scroll-mouse{width:20px;height:32px;border:1.5px solid var(--text3);border-radius:10px;display:flex;justify-content:center;padding-top:5px}
-.scroll-wheel{width:3px;height:5px;background:var(--sky2);border-radius:2px;animation:sw 2s ease infinite}
-@keyframes sw{0%{transform:translateY(0);opacity:1}100%{transform:translateY(9px);opacity:0}}
-.scroll-txt{font-family:monospace;font-size:9px;color:var(--text3);letter-spacing:2px}
-.marquee-section{z-index:2;position:relative;overflow:hidden;border-top:1px solid var(--border);border-bottom:1px solid var(--border);background:rgba(6,10,24,0.9)}
-.mq-track{display:flex;width:max-content;animation:mq 22s linear infinite;padding:16px 0}
-.mq-item{padding:0 28px;font-weight:800;font-size:18px;letter-spacing:-1px;white-space:nowrap;color:var(--text4)}
-.mq-item.lit{color:var(--sky2)}
-.mq-sep{color:var(--indigo);opacity:0.5;margin-left:20px;font-size:11px}
-@keyframes mq{to{transform:translateX(-50%)}}
-.section{position:relative;z-index:2;padding:90px 44px}
-.s-label{font-family:monospace;font-size:10px;color:var(--sky2);letter-spacing:4px;text-transform:uppercase;margin-bottom:12px;display:flex;align-items:center;gap:10px}
-.s-label::before{content:'';width:22px;height:1px;background:var(--sky2)}
-.s-title{font-weight:900;font-size:clamp(28px,4.5vw,48px);letter-spacing:-2px;line-height:1}
-.s-title .g{background:linear-gradient(120deg,var(--sky),var(--indigo));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.s-header{margin-bottom:52px}.s-header.center{text-align:center}
-.s-header.center .s-label{justify-content:center}.s-header.center .s-label::before{display:none}
+
+/* ================= CAROUSEL & CARDS ================= */
 .carousel-outer{overflow:hidden;position:relative}
-.carousel-outer::before,.carousel-outer::after{content:'';position:absolute;top:0;bottom:0;width:80px;z-index:10;pointer-events:none}
-.carousel-outer::before{left:0;background:linear-gradient(90deg,var(--bg2),transparent)}
-.carousel-outer::after{right:0;background:linear-gradient(-90deg,var(--bg2),transparent)}
 .carousel-track{display:flex;gap:18px;transition:transform 0.7s cubic-bezier(0.25,0.46,0.45,0.94);padding:4px 6px}
-.f-card{min-width:340px;background:var(--surface);border:1px solid var(--border);border-radius:24px;padding:26px;position:relative;overflow:hidden;flex-shrink:0;transition:all 0.4s}
+.f-card{min-width:340px;background:var(--surface);border:1px solid var(--border);border-radius:24px;padding:26px;transition:all 0.4s}
 .f-card:hover{border-color:var(--border2);transform:translateY(-5px);box-shadow:0 20px 50px rgba(0,0,0,0.5),0 0 30px rgba(56,189,248,0.07)}
-.f-badge-row{display:flex;gap:7px;margin-bottom:18px;flex-wrap:wrap}
+
 .badge{font-family:monospace;font-size:10px;padding:3px 9px;border-radius:4px;font-weight:700;letter-spacing:0.3px}
 .b-prem{background:rgba(245,158,11,0.12);color:var(--amber);border:1px solid rgba(245,158,11,0.25)}
 .b-hot{background:rgba(244,63,94,0.1);color:#fb7185;border:1px solid rgba(244,63,94,0.22)}
 .b-new{background:rgba(16,185,129,0.1);color:#34d399;border:1px solid rgba(16,185,129,0.22)}
 .b-ai{background:rgba(139,92,246,0.12);color:#c4b5fd;border:1px solid rgba(139,92,246,0.25)}
 .b-std{background:rgba(71,85,105,0.15);color:var(--text3);border:1px solid rgba(71,85,105,0.2)}
-.f-name{font-weight:900;font-size:26px;letter-spacing:-1.2px;color:var(--text);margin-bottom:6px;line-height:1.1;word-break:break-all}
-.f-ext{color:var(--sky2);font-size:19px}
-.f-desc{font-size:13px;color:var(--text2);line-height:1.6;margin-bottom:18px;font-weight:300}
-.f-tags{display:flex;gap:5px;flex-wrap:wrap;margin-bottom:22px}
-.f-tag{background:rgba(56,189,248,0.06);border:1px solid var(--border);border-radius:4px;padding:3px 8px;font-size:10px;color:var(--text3);font-family:monospace}
-.f-footer{display:flex;align-items:flex-end;justify-content:space-between}
-.lbl-sm{font-family:monospace;font-size:9px;color:var(--text3);margin-bottom:3px;letter-spacing:0.5px}
-.f-price{font-weight:900;font-size:24px;color:var(--sky2);letter-spacing:-1px}
-.btn-buy{background:linear-gradient(135deg,var(--sky),var(--indigo));color:#fff;padding:11px 20px;border-radius:9px;font-size:11px;font-family:monospace;border:none;cursor:pointer;transition:all 0.3s;font-weight:700}
-.btn-buy:hover{transform:scale(1.06);box-shadow:0 6px 24px var(--glow)}
-.c-nav{display:flex;align-items:center;justify-content:center;gap:18px;margin-top:28px}
-.c-btn{width:44px;height:44px;border-radius:50%;background:var(--surface);border:1px solid var(--border);color:var(--text2);font-size:17px;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all 0.3s}
-.c-btn:hover{background:var(--sky);color:var(--bg);border-color:var(--sky)}
-.c-dots{display:flex;gap:6px}
-.c-dot{width:6px;height:6px;border-radius:50%;background:var(--text4);cursor:pointer;transition:all 0.3s}
-.c-dot.on{background:var(--sky);width:20px;border-radius:3px}
+
+/* ================= MARKETPLACE ================= */
 .domains-section{background:var(--bg2)}
 .toolbar{max-width:1280px;margin:0 auto 32px;display:flex;gap:14px;align-items:center;flex-wrap:wrap}
 .search-wrap{flex:1;min-width:240px;position:relative}
-.search-wrap input{width:100%;background:var(--surface);border:1px solid var(--border);border-radius:11px;padding:13px 18px 13px 44px;font-size:14px;color:var(--text);outline:none;transition:all 0.3s;font-family:inherit}
+.search-wrap input{width:100%;background:var(--surface);border:1px solid var(--border);border-radius:11px;padding:13px 18px 13px 44px;font-size:14px;color:var(--text);outline:none;transition:all 0.3s}
 .search-wrap input:focus{border-color:var(--sky2);box-shadow:0 0 0 3px rgba(56,189,248,0.09)}
-.search-wrap input::placeholder{color:var(--text3)}
 .s-icon{position:absolute;left:14px;top:50%;transform:translateY(-50%);color:var(--text3);font-size:15px}
-.sort-sel{background:var(--surface);border:1px solid var(--border);border-radius:11px;padding:13px 16px;font-size:13px;color:var(--text2);outline:none;cursor:pointer;min-width:160px;font-family:inherit}
-.sort-sel:hover,.sort-sel:focus{border-color:var(--sky2)}
-.sort-sel option{background:#0a1020}
-.filters{max-width:1280px;margin:0 auto 36px;display:flex;gap:7px;flex-wrap:wrap}
-.f-btn{font-family:monospace;font-size:11px;padding:8px 16px;border-radius:100px;background:var(--surface);border:1px solid var(--border);color:var(--text3);cursor:pointer;transition:all 0.22s}
-.f-btn:hover,.f-btn.on{background:rgba(56,189,248,0.1);border-color:var(--sky2);color:var(--sky2)}
-.f-btn.on{box-shadow:0 0 10px rgba(56,189,248,0.15)}
-.results-bar{max-width:1280px;margin:0 auto 18px}
-.results-count{font-family:monospace;font-size:11px;color:var(--text3)}
-.results-count b{color:var(--sky2)}
+
 .d-grid{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:13px}
 .d-card{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:18px;transition:all 0.32s;position:relative;overflow:hidden}
-.d-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--sky),var(--indigo),var(--violet));transform:scaleX(0);transform-origin:left;transition:transform 0.38s}
 .d-card:hover{border-color:var(--border2);transform:translateY(-3px);box-shadow:0 10px 36px rgba(0,0,0,0.4)}
-.d-card:hover::after{transform:scaleX(1)}
-.d-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:10px;gap:7px}
 .d-name{font-weight:800;font-size:15px;letter-spacing:-0.3px;color:var(--text);line-height:1.2;word-break:break-all}
 .d-ext{color:var(--sky2)}
-.d-tier{font-size:9px;font-family:monospace;padding:2px 6px;border-radius:3px;font-weight:700;white-space:nowrap;flex-shrink:0}
-.d-desc{font-size:12px;color:var(--text2);line-height:1.5;margin-bottom:10px;font-weight:300;min-height:34px}
-.d-tags{display:flex;gap:4px;flex-wrap:wrap;margin-bottom:12px}
-.d-tag{font-size:9px;font-family:monospace;padding:2px 6px;background:rgba(56,189,248,0.05);border:1px solid var(--border);border-radius:3px;color:var(--text3)}
-.d-foot{display:flex;align-items:center;justify-content:space-between}
+.d-tier{font-size:9px;font-family:monospace;padding:2px 6px;border-radius:3px;font-weight:700}
+.d-desc{font-size:12px;color:var(--text2);line-height:1.5;margin-bottom:10px;min-height:34px}
 .d-price{font-weight:900;font-size:17px;color:var(--text);letter-spacing:-0.4px}
-.d-usd{font-size:10px;color:var(--text3);font-family:monospace;font-weight:400}
 .btn-d{background:var(--sky);color:var(--bg);padding:7px 14px;border-radius:6px;font-size:11px;font-family:monospace;font-weight:700;border:none;cursor:pointer;transition:all 0.28s}
-.btn-d:hover{background:var(--sky2);box-shadow:0 3px 14px var(--glow);transform:scale(1.05)}
-.load-wrap{text-align:center;margin-top:44px}
-.btn-load{background:transparent;color:var(--sky2);border:1px solid var(--border2);padding:13px 36px;border-radius:100px;font-family:monospace;font-size:12px;cursor:pointer;transition:all 0.3s}
-.btn-load:hover{background:rgba(56,189,248,0.08);border-color:var(--sky)}
-.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;max-width:1060px;margin:0 auto}
-.why-card{background:var(--surface);border:1px solid var(--border);border-radius:24px;padding:28px;position:relative;overflow:hidden;transition:all 0.38s}
-.why-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--sky),var(--indigo));transform:scaleX(0);transform-origin:left;transition:transform 0.38s}
-.why-card:hover{border-color:var(--border2);transform:translateY(-4px)}
-.why-card:hover::before{transform:scaleX(1)}
-.why-icon{width:44px;height:44px;border-radius:11px;display:flex;align-items:center;justify-content:center;font-size:20px;margin-bottom:18px;background:rgba(56,189,248,0.08);border:1px solid var(--border)}
-.why-h{font-weight:800;font-size:17px;letter-spacing:-0.4px;margin-bottom:9px}
-.why-p{font-size:13px;color:var(--text2);line-height:1.7;font-weight:300}
-.contact-section{position:relative;z-index:2;background:var(--bg2)}
-.contact-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:72px;max-width:1060px;margin:0 auto;align-items:start}
-.contact-left h2{font-weight:900;font-size:clamp(26px,3.8vw,42px);letter-spacing:-2px;line-height:1.1;margin-bottom:14px}
-.contact-left h2 .g{background:linear-gradient(120deg,var(--sky),var(--indigo));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.contact-left p{font-size:14px;color:var(--text2);line-height:1.8;margin-bottom:36px;font-weight:300}
-.trust-items{display:flex;flex-direction:column;gap:14px}
-.trust-item{display:flex;gap:12px;align-items:flex-start}
-.t-icon{width:36px;height:36px;border-radius:9px;background:rgba(56,189,248,0.08);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0;margin-top:1px}
-.t-text h4{font-size:13px;font-weight:700;margin-bottom:2px}
-.t-text p{font-size:12px;color:var(--text2);line-height:1.5;font-weight:300}
-.form-wrap{background:var(--surface);border:1px solid var(--border);border-radius:24px;padding:32px;position:relative;overflow:hidden}
-.form-wrap::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--sky),var(--indigo),transparent)}
-.form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-.fg{margin-bottom:18px}
-.fg label{display:block;font-family:monospace;font-size:10px;color:var(--text3);margin-bottom:7px;letter-spacing:0.5px}
-.fg input,.fg textarea,.fg select{width:100%;background:var(--bg);border:1px solid var(--border);border-radius:9px;padding:12px 14px;font-size:13px;color:var(--text);outline:none;transition:all 0.28s;font-family:inherit}
-.fg input:focus,.fg textarea:focus,.fg select:focus{border-color:var(--sky2);box-shadow:0 0 0 3px rgba(56,189,248,0.08)}
-.fg input::placeholder,.fg textarea::placeholder{color:var(--text3)}
-.fg textarea{resize:vertical;min-height:100px}
-.fg select option{background:#0a1020}
-.btn-submit{width:100%;background:linear-gradient(135deg,var(--sky),var(--indigo));color:#fff;padding:15px;border-radius:11px;font-size:13px;font-family:monospace;font-weight:700;border:none;cursor:pointer;transition:all 0.3s;letter-spacing:0.4px}
-.btn-submit:hover{transform:translateY(-2px);box-shadow:0 7px 36px var(--glow)}
+.btn-d:hover{background:var(--sky2);transform:scale(1.05)}
+
+/* ================= FOOTER ================= */
 footer{position:relative;z-index:2;padding:56px 44px 32px;border-top:1px solid var(--border)}
-.footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:52px;max-width:1160px;margin:0 auto 48px}
-.f-brand p{font-size:13px;color:var(--text3);line-height:1.7;max-width:260px;font-weight:300;margin-top:12px}
-.f-socials{display:flex;gap:8px;margin-top:18px}
+.footer-top{display:grid;grid-template-columns:2fr 1fr;gap:52px;max-width:1160px;margin:0 auto 48px}
 .f-social{width:34px;height:34px;border-radius:7px;background:var(--surface);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:13px;color:var(--text3);text-decoration:none;transition:all 0.2s}
 .f-social:hover{border-color:var(--sky2);color:var(--sky2)}
-.f-col h5{font-weight:800;font-size:13px;margin-bottom:16px;letter-spacing:-0.2px}
-.f-col ul{list-style:none;display:flex;flex-direction:column;gap:9px}
-.f-col a{font-size:12px;color:var(--text3);text-decoration:none;transition:color 0.2s;font-weight:300}
-.f-col a:hover{color:var(--sky2)}
-.footer-bottom{max-width:1160px;margin:0 auto;padding-top:32px;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
-.f-legal{font-family:monospace;font-size:10px;color:var(--text3)}
-.f-badges{display:flex;gap:8px}
-.f-bdg{font-family:monospace;font-size:9px;padding:3px 9px;border-radius:4px;border:1px solid var(--border);color:var(--text3)}
-@media(max-width:880px){nav{padding:0 18px}.nav-links{display:none}.hero{padding:85px 20px 56px}.stats-row{flex-direction:column;border-radius:16px}.stat-item+.stat-item::before{width:76%;left:12%;height:1px;top:0}.section{padding:56px 20px}.why-grid,.contact-grid{grid-template-columns:1fr}.footer-top{grid-template-columns:1fr 1fr;gap:32px}.d-grid{grid-template-columns:1fr 1fr}.form-row{grid-template-columns:1fr}}
-@media(max-width:520px){.d-grid{grid-template-columns:1fr}.footer-top{grid-template-columns:1fr}.hero-h1{letter-spacing:-2px}}
+
+/* Responsive */
+@media(max-width:880px){
+  nav{padding:0 18px}
+  .hero{padding:85px 20px 56px}
+  .stats-row{flex-direction:column}
+  .d-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:520px){
+  .d-grid{grid-template-columns:1fr}
+  .hero-h1{letter-spacing:-2px}
+}
 </style>
 </head>
 <body>
-<div class="grid-bg"></div>
-<div class="vignette"></div>
+
 <nav>
   <a href="#" class="logo"><span class="logo-icon">&#9672;</span>Domain<em>Depth</em></a>
-  <div class="nav-links">
-    <a href="#featured" class="nav-link">Featured</a>
-    <a href="#domains" class="nav-link">Marketplace</a>
-    <a href="#why" class="nav-link">Why Us</a>
-    <a href="#contact" class="nav-link">Contact</a>
-  </div>
   <div class="nav-right">
-    <div class="nav-count"><b id="navCount">91</b> Domains</div>
+    <div class="nav-count"><b id="navCount">127</b> Domains</div>
     <a href="#contact" class="btn-nav">Buy Now &#8594;</a>
   </div>
 </nav>
+
 <section class="hero">
-  <div class="orb orb1"></div><div class="orb orb2"></div><div class="orb orb3"></div>
+  <div class="orb orb1"></div>
+  <div class="orb orb2"></div>
+  <div class="orb orb3"></div>
+  
   <div class="ticker-strip"><div class="ticker-inner" id="tickerEl"></div></div>
-  <div class="eyebrow"><span class="live-dot"></span>91 Premium Domains Available Now</div>
+  
+  <div class="eyebrow"><span class="live-dot"></span>127 Premium Domains Available Now</div>
+  
   <h1 class="hero-h1">
     <span class="h-line1">Premium Domains</span>
     <span class="h-line2">For Sale</span>
     <span class="h-line3">Invest in your digital identity today</span>
   </h1>
-  <p class="hero-sub">Own the perfect domain for your <strong>AI startup</strong>, SaaS platform, or next big idea. Handpicked names with real market value &mdash; from <strong>$155</strong> to <strong>$49,000</strong>.</p>
+  
+  <p class="hero-sub">Own the perfect domain for your <strong>AI startup</strong>, SaaS platform, or next big idea. Handpicked names with real market value.</p>
+  
   <div class="stats-row">
-    <div class="stat-item"><div class="stat-num">91+</div><div class="stat-lbl">Domains Listed</div></div>
-    <div class="stat-item"><div class="stat-num">$7,300</div><div class="stat-lbl">Avg. Value</div></div>
-    <div class="stat-item"><div class="stat-num">247+</div><div class="stat-lbl">Deals Closed</div></div>
+    <div class="stat-item"><div class="stat-num">127+</div><div class="stat-lbl">Domains Listed</div></div>
+    <div class="stat-item"><div class="stat-num">$12,400</div><div class="stat-lbl">Avg. Value</div></div>
+    <div class="stat-item"><div class="stat-num">312+</div><div class="stat-lbl">Deals Closed</div></div>
     <div class="stat-item"><div class="stat-num">24h</div><div class="stat-lbl">Response Time</div></div>
   </div>
+  
   <div class="cta-row">
     <a href="#domains" class="btn-hero btn-primary">Browse All Domains &#8594;</a>
-    <a href="#contact" class="btn-hero btn-secondary">Make an Offer</a>
   </div>
-  <div class="scroll-hint"><div class="scroll-mouse"><div class="scroll-wheel"></div></div><span class="scroll-txt">SCROLL</span></div>
 </section>
+
 <div class="marquee-section"><div class="mq-track" id="mqEl"></div></div>
-<section class="section" id="featured" style="background:var(--bg)">
-  <div class="s-header"><div class="s-label">&#9733; &mdash; Top Picks</div><h2 class="s-title">Featured <span class="g">Domains</span></h2></div>
-  <div class="carousel-outer"><div class="carousel-track" id="cTrack"></div></div>
-  <div class="c-nav">
-    <button class="c-btn" id="prevBtn">&#8592;</button>
-    <div class="c-dots" id="cDots"></div>
-    <button class="c-btn" id="nextBtn">&#8594;</button>
-  </div>
-</section>
-<section class="section domains-section" id="domains">
-  <div class="s-header"><div class="s-label">// &mdash; Full Inventory</div><h2 class="s-title">All <span class="g">Domains</span></h2></div>
+
+<section class="section domains-section" id="domains" style="padding-top:60px">
+  <div class="s-header"><div class="s-label">// &mdash; Full Inventory</div><h2 class="s-title">All <span class="g" style="background:linear-gradient(120deg,var(--sky),var(--indigo));-webkit-background-clip:text;-webkit-text-fill-color:transparent">Domains</span></h2></div>
+  
   <div class="toolbar">
     <div class="search-wrap"><span class="s-icon">&#9906;</span><input type="text" id="searchQ" placeholder="Search by name, keyword, or extension..."></div>
     <select class="sort-sel" id="sortSel">
@@ -248,88 +180,238 @@ footer{position:relative;z-index:2;padding:56px 44px 32px;border-top:1px solid v
       <option value="name">Name: A to Z</option>
     </select>
   </div>
-  <div class="filters" id="filterRow"></div>
-  <div class="results-bar"><div class="results-count">Showing <b id="rCount">0</b> domains</div></div>
+
   <div class="d-grid" id="dGrid"></div>
-  <div class="load-wrap"><button class="btn-load" id="loadBtn">Load More &#8595;</button></div>
+  <div class="load-wrap"><button class="btn-load" id="loadBtn">Load More ↓</button></div>
 </section>
-<section class="section" id="why" style="background:var(--bg)">
-  <div class="s-header center"><div class="s-label">&#9670; &mdash; Why DomainDepth</div><h2 class="s-title">The Smarter Way to <span class="g">Invest</span></h2></div>
-  <div class="why-grid">
-    <div class="why-card"><div class="why-icon">&#9889;</div><div class="why-h">Expert Valuation</div><div class="why-p">Every domain analyzed by professional investors using real market data, comparable sales, and trend analysis.</div></div>
-    <div class="why-card"><div class="why-icon">&#128274;</div><div class="why-h">Secure Transactions</div><div class="why-p">All transfers processed through Escrow.com — full protection for both buyer and seller throughout the deal.</div></div>
-    <div class="why-card"><div class="why-icon">&#128200;</div><div class="why-h">AI-Era Focus</div><div class="why-p">Our catalog targets the fastest-growing sectors — AI, SaaS, FinTech, Web3 — aligned with 2025-2035 trends.</div></div>
-    <div class="why-card"><div class="why-icon">&#128172;</div><div class="why-h">24h Response</div><div class="why-p">We respond to every inquiry within 24 hours. From interest to completed transfer, we guide you every step.</div></div>
-    <div class="why-card"><div class="why-icon">&#127919;</div><div class="why-h">Flexible Pricing</div><div class="why-p">Make an offer. Payment plans available for premium domains over $5,000. We work with serious buyers.</div></div>
-    <div class="why-card"><div class="why-icon">&#127942;</div><div class="why-h">247+ Closed Deals</div><div class="why-p">Track record of successful sales to startups, agencies, and investors worldwide. Trusted globally.</div></div>
-  </div>
-</section>
-<section class="section contact-section" id="contact">
-  <div class="contact-grid">
-    <div class="contact-left">
-      <div class="s-label">&#9993; &mdash; Get in Touch</div>
-      <h2>Secure Your <span class="g">Domain</span> Today</h2>
-      <p>Whether you are a founder, investor, or brand builder — our team is ready to help you acquire the perfect domain. Fast, safe, and straightforward.</p>
-      <div class="trust-items">
-        <div class="trust-item"><div class="t-icon">&#9889;</div><div class="t-text"><h4>Lightning Response</h4><p>We reply to all inquiries within 24 hours, often much sooner.</p></div></div>
-        <div class="trust-item"><div class="t-icon">&#128274;</div><div class="t-text"><h4>Escrow Protection</h4><p>Safe transfer via Escrow.com — your payment is always protected.</p></div></div>
-        <div class="trust-item"><div class="t-icon">&#128142;</div><div class="t-text"><h4>Instant Transfer</h4><p>Domain transfer completed within 24-48 hours after payment.</p></div></div>
-        <div class="trust-item"><div class="t-icon">&#129309;</div><div class="t-text"><h4>Negotiable Prices</h4><p>All prices are negotiable. Submit an offer and let us talk.</p></div></div>
-      </div>
-    </div>
-    <div class="form-wrap">
-      <div class="form-row">
-        <div class="fg"><label>FIRST NAME</label><input type="text" placeholder="John"></div>
-        <div class="fg"><label>LAST NAME</label><input type="text" placeholder="Smith"></div>
-      </div>
-      <div class="fg"><label>EMAIL ADDRESS</label><input type="email" placeholder="john@startup.com"></div>
-      <div class="fg"><label>DOMAIN OF INTEREST</label><input type="text" id="domainField" placeholder="theyknow.ai"></div>
-      <div class="fg"><label>BUDGET RANGE</label>
-        <select><option value="">Select budget range...</option><option>Under $1,000</option><option>$1,000 - $5,000</option><option>$5,000 - $15,000</option><option>$15,000 - $30,000</option><option>$30,000+</option></select>
-      </div>
-      <div class="fg"><label>MESSAGE</label><textarea placeholder="Tell us about your project..."></textarea></div>
-      <button class="btn-submit" id="submitBtn">Send Inquiry &#8594;</button>
-    </div>
-  </div>
-</section>
+
 <footer>
   <div class="footer-top">
     <div class="f-brand">
       <a href="#" class="logo"><span class="logo-icon">&#9672;</span>Domain<em>Depth</em></a>
       <p>Your trusted marketplace for premium domain names. Handpicked, valued, and ready to power your next venture.</p>
-      <div class="f-socials"><a href="#" class="f-social">X</a><a href="#" class="f-social">in</a><a href="#" class="f-social">@</a></div>
     </div>
-    <div class="f-col"><h5>Domains</h5><ul><li><a href="#">AI Domains</a></li><li><a href="#">.com Premium</a></li><li><a href="#">.io Domains</a></li><li><a href="#">.ai Domains</a></li></ul></div>
-    <div class="f-col"><h5>Services</h5><ul><li><a href="#">Domain Appraisal</a></li><li><a href="#">Secure Transfer</a></li><li><a href="#">Escrow Service</a></li><li><a href="#">Broker Service</a></li></ul></div>
-    <div class="f-col"><h5>Contact</h5><ul><li><a href="#">WhatsApp</a></li><li><a href="#">Telegram</a></li><li><a href="#">Email Us</a></li><li><a href="#">Twitter / X</a></li></ul></div>
+    <div class="f-col">
+      <h5>Contact</h5>
+      <ul>
+        <li><a href="mailto:domaindepth@gmail.com">Email Us</a></li>
+        <li><a href="https://twitter.com/domaindepth" target="_blank">Twitter / X</a></li>
+      </ul>
+    </div>
   </div>
   <div class="footer-bottom">
-    <span class="f-legal">&#169; 2026 DomainDepth &mdash; All rights reserved</span>
-    <div class="f-badges"><span class="f-bdg">SECURED BY ESCROW</span><span class="f-bdg">SSL PROTECTED</span></div>
+    <span class="f-legal">© 2026 DomainDepth — All rights reserved</span>
+    <div class="f-badges">
+      <span class="f-bdg">SECURED BY ESCROW</span>
+      <span class="f-bdg">SSL PROTECTED</span>
+    </div>
   </div>
 </footer>
+
 <script>
-var DATA=[{n:"theyknow",e:".ai",p:49000,t:"premium",c:"AI",d:"Bold mysterious AI brand — perfect for intelligence or data platform",tags:["AI","Brand","Premium","Data"]},{n:"GeniusHub",e:".ai",p:25000,t:"premium",c:"AI",d:"AI genius hub — top-tier name for AI research or education platform",tags:["AI","Hub","Genius","SaaS"]},{n:"pilotcompiler",e:".com",p:25000,t:"premium",c:"Dev",d:"Pilot compiler — perfect for developer tools, IDE, or AI coding platform",tags:["Dev","Compiler","AI","Tools"]},{n:"aip",e:".si",p:25000,t:"premium",c:"AI",d:"Ultra-short AI brand — rare 3-character domain with powerful AI prefix",tags:["AI","Short","Rare","Premium"]},{n:"botchat",e:".si",p:25000,t:"premium",c:"AI",d:"Bot chat — clean chatbot platform brand on .si extension",tags:["AI","Bot","Chat","Platform"]},{n:"1nemo",e:".com",p:19800,t:"premium",c:"Brand",d:"Unique numeric-word .com brand — memorable, short, versatile identity",tags:["Brand","Short","Numeric","Premium"]},{n:"MyTouch",e:".ai",p:19400,t:"premium",c:"AI",d:"Personal AI touch — consumer AI assistant or personalization app",tags:["AI","Consumer","Personal","UX"]},{n:"privatefde",e:".com",p:19000,t:"premium",c:"Security",d:"Private full disk encryption — cybersecurity or enterprise privacy startup",tags:["Security","Privacy","Encryption","B2B"]},{n:"DatX",e:".ai",p:18200,t:"premium",c:"AI",d:"Punchy data AI brand — analytics, big data, AI infrastructure platform",tags:["AI","Data","Analytics","Short"]},{n:"Quantyra",e:".ai",p:18000,t:"premium",c:"AI",d:"Unique coined AI brand — strong for quantum computing or analytics startup",tags:["AI","Quantum","Brand","Unique"]},{n:"Millioncontext",e:".com",p:15999,t:"premium",c:"AI",d:"Million context — LLM context window brand, AI memory management platform",tags:["AI","LLM","Context","Memory"]},{n:"Ezwallet",e:".ai",p:14295,t:"hot",c:"FinTech",d:"Easy AI-powered wallet — fintech, crypto, and payment automation brand",tags:["FinTech","Wallet","AI","Crypto"]},{n:"iDrone",e:".ai",p:13750,t:"hot",c:"Tech",d:"Smart drone AI brand — drone tech, UAV automation, aerial intelligence",tags:["Drone","AI","UAV","Tech"]},{n:"cloudpixel",e:".ai",p:12900,t:"hot",c:"AI",d:"Cloud pixel AI — visual AI, image processing, cloud graphics platform",tags:["AI","Cloud","Visual","Design"]},{n:"speedingai",e:".com",p:12895,t:"hot",c:"AI",d:"Speed-focused AI platform — performance optimization and acceleration tools",tags:["AI","Speed","Performance","SaaS"]},{n:"Logicalreasoning",e:".ai",p:12895,t:"ai",c:"AI",d:"Logical reasoning AI — perfect for LLM, AGI, or research laboratory brand",tags:["AI","Logic","Reasoning","AGI"]},{n:"PureLine",e:".ai",p:11099,t:"ai",c:"AI",d:"Clean-line AI brand — minimal SaaS, clean data, pure intelligence platform",tags:["AI","Minimal","Brand","SaaS"]},{n:"Vuzi",e:".io",p:11500,t:"hot",c:"Brand",d:"Short punchy .io brand — tech startup, app, or AI product name",tags:["Brand","Short","Tech","App"]},{n:"Agentfeatures",e:".com",p:10000,t:"hot",c:"AI",d:"Agent features platform — manage and deploy AI agent capabilities at scale",tags:["AI","Agent","Features","SaaS"]},{n:"lesson",e:".si",p:9900,t:"hot",c:"EdTech",d:"Lesson — clean EdTech brand for online learning and education platform",tags:["EdTech","Learning","SaaS","Brand"]},{n:"isentroniq",e:".ai",p:9995,t:"ai",c:"AI",d:"Unique AI intelligence brand — enterprise AI or research platform",tags:["AI","Enterprise","Brand","Research"]},{n:"Qxf",e:".ai",p:9995,t:"ai",c:"AI",d:"Ultra-short AI brand — rare 3-char .ai domain with very high resale value",tags:["AI","Short","Brand","Rare"]},{n:"medifix",e:".pro",p:9500,t:"hot",c:"Health",d:"Medi-fix — medical services or AI health solutions platform brand",tags:["Health","Medical","Fix","Brand"]},{n:"aistage",e:".ai",p:9500,t:"ai",c:"AI",d:"AI stage platform — deploy, showcase, and manage AI applications at scale",tags:["AI","Stage","Platform","Deploy"]},{n:"chainsecure",e:".ai",p:9595,t:"ai",c:"AI",d:"AI-powered chain security — blockchain and AI security fusion platform",tags:["AI","Security","Chain","Blockchain"]},{n:"marketingmai",e:".com",p:9888,t:"hot",c:"AI",d:"Marketing plus AI — AI-powered marketing automation and analytics platform",tags:["AI","Marketing","SaaS","Automation"]},{n:"OpenaClaw",e:".com",p:9000,t:"hot",c:"Brand",d:"Open a Claw — gaming, claw machine, or interactive prize redemption brand",tags:["Gaming","Brand","Consumer","Fun"]},{n:"hala2034",e:".com",p:9000,t:"hot",c:"Brand",d:"Hala 2034 — brand aligned with Saudi Vision 2034 market opportunities",tags:["Saudi","Brand","Vision","2034"]},{n:"Agentgaze",e:".com",p:8900,t:"ai",c:"AI",d:"Agent gaze — AI computer vision, surveillance, or intelligent agent monitoring",tags:["AI","Agent","Vision","Monitoring"]},{n:"yourqwen",e:".com",p:7850,t:"ai",c:"AI",d:"Your Qwen — personal AI assistant brand, LLM-based product name",tags:["AI","LLM","Personal","Brand"]},{n:"Pkri",e:".com",p:7988,t:"ai",c:"Brand",d:"Short 4-letter .com brand — rare, versatile, investment-grade domain asset",tags:["Brand","Short","4-letter","Premium"]},{n:"Agentalgos",e:".com",p:7595,t:"ai",c:"AI",d:"Agent algorithms — AI agent trading and algorithmic automation platform",tags:["AI","Agent","Algorithm","FinTech"]},{n:"aibarcodebuilder",e:".com",p:6800,t:"new",c:"AI",d:"AI barcode builder — generate barcodes and QR codes with artificial intelligence",tags:["AI","Barcode","SaaS","Tools"]},{n:"promptcentre",e:".com",p:6888,t:"new",c:"AI",d:"Prompt centre — hub for prompt engineering and AI prompts library",tags:["AI","Prompt","LLM","Hub"]},{n:"hobacoin",e:".com",p:6288,t:"new",c:"Web3",d:"Hoba coin — crypto token, Web3 community or DeFi project brand",tags:["Crypto","Web3","Coin","DeFi"]},{n:"autocorrectbot",e:".com",p:6595,t:"new",c:"AI",d:"Auto-correct bot — AI writing assistant, grammar and text correction tool",tags:["AI","Bot","Writing","SaaS"]},{n:"VidaSky",e:".com",p:5666,t:"new",c:"Brand",d:"Vida Sky — lifestyle, wellness, travel, or SaaS brand name",tags:["Lifestyle","Brand","Travel","SaaS"]},{n:"privateapi",e:".io",p:5900,t:"ai",c:"Dev",d:"Private API — secure API gateway and developer tools platform",tags:["Dev","API","Security","B2B"]},{n:"parevero",e:".com",p:5175,t:"new",c:"Brand",d:"Coined Italian-style brand — food, wellness, or lifestyle startup name",tags:["Brand","Food","Lifestyle","Unique"]},{n:"Da5",e:".ai",p:4995,t:"new",c:"AI",d:"Short numeric AI name — versatile brand for AI-powered tools and apps",tags:["AI","Short","Numeric","Brand"]},{n:"TopSocial",e:".ai",p:4950,t:"new",c:"AI",d:"Top social AI — AI-driven social media management and analytics platform",tags:["AI","Social","Marketing","SaaS"]},{n:"ScanQuick",e:".ai",p:4850,t:"new",c:"AI",d:"Quick AI scanning — document AI, QR codes, barcodes, fast scan tools",tags:["AI","Scan","Quick","SaaS"]},{n:"neuropilot",e:".io",p:4900,t:"ai",c:"AI",d:"Neuro pilot — AI autopilot for neural networks and machine learning pipelines",tags:["AI","Neural","Pilot","ML"]},{n:"algorithmicflight",e:".com",p:4900,t:"new",c:"Tech",d:"Algorithmic flight — AI for aviation and flight optimization platform",tags:["Aviation","AI","Algorithm","Tech"]},{n:"appadministrator",e:".com",p:4995,t:"new",c:"SaaS",d:"App administrator — SaaS platform for app management and administration",tags:["SaaS","Admin","App","B2B"]},{n:"Etpstrategies",e:".com",p:4995,t:"new",c:"Finance",d:"ETP strategies — ETF and ETP investment strategy platform or fund brand",tags:["Finance","ETF","Strategy","Investment"]},{n:"truneed",e:".com",p:4900,t:"new",c:"Brand",d:"Tru need — authentic needs platform, gig economy or marketplace brand",tags:["Brand","Marketplace","Gig","Consumer"]},{n:"aiartlicensing",e:".com",p:4295,t:"new",c:"AI",d:"AI art licensing — platform to license and sell AI-generated artwork",tags:["AI","Art","License","Marketplace"]},{n:"Aiquality",e:".org",p:3975,t:"new",c:"AI",d:"AI quality — AI testing, quality assurance, and model benchmarking platform",tags:["AI","Quality","Testing","B2B"]},{n:"workflowmemory",e:".com",p:3988,t:"new",c:"AI",d:"Workflow memory — AI-powered workflow memory for productivity and automation",tags:["AI","Workflow","Memory","SaaS"]},{n:"quantumbuild",e:".org",p:3988,t:"new",c:"Tech",d:"Quantum build — quantum computing development and tools brand",tags:["Quantum","Build","Tech","Dev"]},{n:"mybots",e:".si",p:3988,t:"new",c:"AI",d:"My bots — personal AI bot builder and management platform brand",tags:["AI","Bot","Personal","Builder"]},{n:"Appagents",e:".io",p:3090,t:"new",c:"AI",d:"App agents — platform for building and deploying AI app agents",tags:["AI","Agent","App","Platform"]},{n:"PaulSolar",e:".com",p:3500,t:"std",c:"Energy",d:"Paul Solar — solar energy brand or personal solar business name",tags:["Energy","Solar","Green","Brand"]},{n:"Editprompt",e:".io",p:2888,t:"new",c:"AI",d:"Edit prompt — AI prompt editor and optimizer for LLM power users",tags:["AI","Prompt","Editor","LLM"]},{n:"trafficlawyerchicago",e:".com",p:2900,t:"std",c:"Legal",d:"Traffic lawyer Chicago — geo-targeted legal services domain asset",tags:["Legal","Local","Traffic","Chicago"]},{n:"agentssystems",e:".com",p:2900,t:"std",c:"AI",d:"Agent systems — multi-agent AI systems and infrastructure platform",tags:["AI","Agent","Systems","Infrastructure"]},{n:"wecher",e:".com",p:2895,t:"std",c:"Brand",d:"Wecher — short coined brand name for tech or consumer startup",tags:["Brand","Short","Tech","Unique"]},{n:"more-games",e:".com",p:2395,t:"std",c:"Gaming",d:"More games — gaming portal, game discovery, or publisher brand",tags:["Gaming","Portal","Consumer","Brand"]},{n:"Deeporo",e:".com",p:2190,t:"std",c:"AI",d:"Deeporo — deep AI brand, fintech or data analytics platform name",tags:["AI","Deep","Brand","Analytics"]},{n:"buildroot",e:".xyz",p:1999,t:"std",c:"Dev",d:"Build root — developer tools, open-source or build systems brand",tags:["Dev","Build","Open Source","Tools"]},{n:"call28",e:".com",p:1999,t:"std",c:"Brand",d:"Call 28 — communication, call center, or telecom brand name",tags:["Telecom","Brand","Call","Service"]},{n:"chinonline",e:".com",p:1995,t:"std",c:"Brand",d:"Chin online — e-commerce, online marketplace or brand portal",tags:["eCommerce","Brand","Online","China"]},{n:"Newyorkbistro",e:".com",p:1975,t:"std",c:"Food",d:"New York Bistro — restaurant, food brand or delivery service name",tags:["Food","Restaurant","NewYork","Brand"]},{n:"nded",e:".net",p:1880,t:"std",c:"Brand",d:"Short 4-letter .net brand — versatile for tech or service startup",tags:["Brand","Short","Net","Tech"]},{n:"humainmedical",e:".com",p:1900,t:"std",c:"Health",d:"Humain medical — AI-powered medical platform or health technology brand",tags:["Health","Medical","AI","Brand"]},{n:"aimonetize",e:".co",p:1900,t:"std",c:"AI",d:"AI monetize — platform to monetize AI tools, content or APIs",tags:["AI","Monetize","SaaS","Revenue"]},{n:"selfdriveos",e:".com",p:1900,t:"std",c:"Tech",d:"Self-drive OS — autonomous driving operating system brand name",tags:["Auto","OS","AI","Autonomous"]},{n:"agentstechno",e:".com",p:1900,t:"std",c:"AI",d:"Agent techno — AI agent technology solutions and services brand",tags:["AI","Agent","Tech","Brand"]},{n:"metricsonchain",e:".io",p:1900,t:"std",c:"Web3",d:"Metrics on-chain — blockchain analytics and on-chain data platform",tags:["Web3","Analytics","Blockchain","Data"]},{n:"x-t",e:".xyz",p:1795,t:"std",c:"Brand",d:"X-T — ultra-short brand for tech, fashion, or startup identity",tags:["Brand","Short","Tech","Fashion"]},{n:"codingalfa",e:".com",p:1699,t:"std",c:"Dev",d:"Coding alfa — alpha coding platform for developers and learners",tags:["Dev","Coding","Education","Brand"]},{n:"aidrivepilot",e:".com",p:1595,t:"std",c:"AI",d:"AI drive pilot — AI-powered driving or delivery management platform",tags:["AI","Drive","Pilot","Logistics"]},{n:"thesmartshops",e:".com",p:1595,t:"std",c:"eComm",d:"The smart shops — AI-powered e-commerce or smart retail brand",tags:["eCommerce","Smart","Retail","AI"]},{n:"saudi-travels",e:".com",p:1375,t:"std",c:"Travel",d:"Saudi travels — Saudi Arabia travel agency or tourism brand",tags:["Travel","Saudi","Tourism","Brand"]},{n:"cianalyst",e:".com",p:1295,t:"std",c:"Finance",d:"CI analyst — competitive intelligence or crypto intelligence brand",tags:["Finance","Analytics","CI","B2B"]},{n:"virtualxz",e:".com",p:1295,t:"std",c:"Tech",d:"Virtual XZ — virtual reality or extended reality brand name",tags:["VR","Tech","Virtual","Brand"]},{n:"arabichorses",e:".com",p:1490,t:"std",c:"Niche",d:"Arabic horses — premium equine marketplace or breeding portal brand",tags:["Equine","Niche","Arabic","Marketplace"]},{n:"travelin24",e:".com",p:1495,t:"std",c:"Travel",d:"Travel in 24 — 24-hour travel deals and express booking platform",tags:["Travel","Deals","Consumer","App"]},{n:"thegoldweb",e:".com",p:1150,t:"std",c:"Brand",d:"The gold web — premium web services or golden brand portal name",tags:["Brand","Web","Gold","Premium"]},{n:"lamapedia",e:".com",p:950,t:"std",c:"Brand",d:"Lama pedia — encyclopedia or AI knowledge base brand name",tags:["Brand","Knowledge","AI","Wiki"]},{n:"droneevents",e:".xyz",p:995,t:"std",c:"Tech",d:"Drone events — drone racing, shows and aerial entertainment brand",tags:["Drone","Events","Entertainment","Tech"]},{n:"internetwebsite",e:".xyz",p:900,t:"std",c:"Brand",d:"Internet website — meta brand for web services or portal platform",tags:["Brand","Web","Domain","Meta"]},{n:"myhd",e:".xyz",p:885,t:"std",c:"Brand",d:"My HD — personal HD media, streaming or storage brand name",tags:["Media","HD","Streaming","Consumer"]},{n:"yslox",e:".com",p:959,t:"std",c:"Brand",d:"Yslox — short coined brand for fashion, tech or lifestyle startup",tags:["Brand","Fashion","Lifestyle","Short"]},{n:"Energyz",e:".org",p:1275,t:"std",c:"Energy",d:"Energyz — clean energy or energy tech organization brand name",tags:["Energy","Green","Tech","Org"]},{n:"KetoBuilders",e:".com",p:675,t:"std",c:"Health",d:"Keto builders — keto diet, fitness or nutrition brand name",tags:["Health","Keto","Fitness","Consumer"]},{n:"uniquevideoproductions",e:".com",p:699,t:"std",c:"Media",d:"Unique video productions — video production company brand name",tags:["Media","Video","Production","Brand"]},{n:"whydeepseek",e:".com",p:575,t:"std",c:"AI",d:"Why DeepSeek — informational or community site about DeepSeek AI",tags:["AI","DeepSeek","Brand","Info"]},{n:"cloudpoint",e:".xyz",p:475,t:"std",c:"Tech",d:"Cloud point — cloud services or data point platform brand name",tags:["Cloud","Tech","Brand","SaaS"]},{n:"kalima",e:".xyz",p:375,t:"std",c:"Brand",d:"Kalima — Arabic word for word — media, content or multilingual brand",tags:["Arabic","Brand","Media","Content"]},{n:"sustainz",e:".org",p:375,t:"std",c:"ESG",d:"Sustainz — sustainability organization or ESG brand name",tags:["ESG","Sustainability","Green","Org"]},{n:"smartvirtual",e:".services",p:375,t:"std",c:"Tech",d:"Smart virtual services — virtual assistant or remote services brand",tags:["Virtual","Smart","Services","B2B"]},{n:"takeyourcoins",e:".com",p:275,t:"std",c:"Crypto",d:"Take your coins — crypto wallet, reward, or DeFi brand name",tags:["Crypto","Coins","DeFi","Brand"]},{n:"franceonline",e:".net",p:275,t:"std",c:"Brand",d:"France online — French market portal or European e-commerce brand",tags:["France","eCommerce","Brand","Europe"]},{n:"travelextensive",e:".com",p:250,t:"std",c:"Travel",d:"Travel extensive — travel blog, guide or extensive travel brand name",tags:["Travel","Blog","Brand","Guide"]},{n:"fixweb",e:".xyz",p:155,t:"std",c:"Dev",d:"Fix web — web repair, maintenance or bug-fix service brand name",tags:["Dev","Web","Fix","Service"]}];
+// ====================== Afternic Integration ======================
+var AFTERNIC_BASE = "https://afternic.com/domain/";
+
+var DATA = [
+{n:"theyknow",e:".ai",p:49000,t:"premium",c:"AI",d:"Bold mysterious AI brand — perfect for intelligence or data platform",tags:["AI","Brand","Premium","Data"]},
+{n:"GeniusHub",e:".ai",p:25000,t:"premium",c:"AI",d:"AI genius hub — top-tier name for AI research or education platform",tags:["AI","Hub","Genius","SaaS"]},
+{n:"pilotcompiler",e:".com",p:25000,t:"premium",c:"Dev",d:"Pilot compiler — perfect for developer tools, IDE, or AI coding platform",tags:["Dev","Compiler","AI","Tools"]},
+{n:"aip",e:".si",p:25000,t:"premium",c:"AI",d:"Ultra-short AI brand — rare 3-character domain with powerful AI prefix",tags:["AI","Short","Rare","Premium"]},
+{n:"botchat",e:".si",p:25000,t:"premium",c:"AI",d:"Bot chat — clean chatbot platform brand on .si extension",tags:["AI","Bot","Chat","Platform"]},
+{n:"1nemo",e:".com",p:19800,t:"premium",c:"Brand",d:"Unique numeric-word .com brand — memorable, short, versatile identity",tags:["Brand","Short","Numeric","Premium"]},
+{n:"MyTouch",e:".ai",p:19400,t:"premium",c:"AI",d:"Personal AI touch — consumer AI assistant or personalization app",tags:["AI","Consumer","Personal","UX"]},
+{n:"privatefde",e:".com",p:19000,t:"premium",c:"Security",d:"Private full disk encryption — cybersecurity or enterprise privacy startup",tags:["Security","Privacy","Encryption","B2B"]},
+{n:"DatX",e:".ai",p:18200,t:"premium",c:"AI",d:"Punchy data AI brand — analytics, big data, AI infrastructure platform",tags:["AI","Data","Analytics","Short"]},
+{n:"Quantyra",e:".ai",p:18000,t:"premium",c:"AI",d:"Unique coined AI brand — strong for quantum computing or analytics startup",tags:["AI","Quantum","Brand","Unique"]},
+{n:"Millioncontext",e:".com",p:15999,t:"premium",c:"AI",d:"Million context — LLM context window brand, AI memory management platform",tags:["AI","LLM","Context","Memory"]},
+{n:"Ezwallet",e:".ai",p:14295,t:"hot",c:"FinTech",d:"Easy AI-powered wallet — fintech, crypto, and payment automation brand",tags:["FinTech","Wallet","AI","Crypto"]},
+{n:"iDrone",e:".ai",p:13750,t:"hot",c:"Tech",d:"Smart drone AI brand — drone tech, UAV automation, aerial intelligence",tags:["Drone","AI","UAV","Tech"]},
+{n:"cloudpixel",e:".ai",p:12900,t:"hot",c:"AI",d:"Cloud pixel AI — visual AI, image processing, cloud graphics platform",tags:["AI","Cloud","Visual","Design"]},
+{n:"speedingai",e:".com",p:12895,t:"hot",c:"AI",d:"Speed-focused AI platform — performance optimization and acceleration tools",tags:["AI","Speed","Performance","SaaS"]},
+{n:"Logicalreasoning",e:".ai",p:12895,t:"ai",c:"AI",d:"Logical reasoning AI — perfect for LLM, AGI, or research laboratory brand",tags:["AI","Logic","Reasoning","AGI"]},
+{n:"PureLine",e:".ai",p:11099,t:"ai",c:"AI",d:"Clean-line AI brand — minimal SaaS, clean data, pure intelligence platform",tags:["AI","Minimal","Brand","SaaS"]},
+{n:"Vuzi",e:".io",p:11500,t:"hot",c:"Brand",d:"Short punchy .io brand — tech startup, app, or AI product name",tags:["Brand","Short","Tech","App"]},
+{n:"Agentfeatures",e:".com",p:10000,t:"hot",c:"AI",d:"Agent features platform — manage and deploy AI agent capabilities at scale",tags:["AI","Agent","Features","SaaS"]},
+{n:"lesson",e:".si",p:9900,t:"hot",c:"EdTech",d:"Lesson — clean EdTech brand for online learning and education platform",tags:["EdTech","Learning","SaaS","Brand"]},
+{n:"isentroniq",e:".ai",p:9995,t:"ai",c:"AI",d:"Unique AI intelligence brand — enterprise AI or research platform",tags:["AI","Enterprise","Brand","Research"]},
+{n:"Qxf",e:".ai",p:9995,t:"ai",c:"AI",d:"Ultra-short AI brand — rare 3-char .ai domain with very high resale value",tags:["AI","Short","Brand","Rare"]},
+{n:"medifix",e:".pro",p:9500,t:"hot",c:"Health",d:"Medi-fix — medical services or AI health solutions platform brand",tags:["Health","Medical","Fix","Brand"]},
+{n:"aistage",e:".ai",p:9500,t:"ai",c:"AI",d:"AI stage platform — deploy, showcase, and manage AI applications at scale",tags:["AI","Stage","Platform","Deploy"]},
+{n:"chainsecure",e:".ai",p:9595,t:"ai",c:"AI",d:"AI-powered chain security — blockchain and AI security fusion platform",tags:["AI","Security","Chain","Blockchain"]},
+{n:"marketingmai",e:".com",p:9888,t:"hot",c:"AI",d:"Marketing plus AI — AI-powered marketing automation and analytics platform",tags:["AI","Marketing","SaaS","Automation"]},
+{n:"OpenaClaw",e:".com",p:9000,t:"hot",c:"Brand",d:"Open a Claw — gaming, claw machine, or interactive prize redemption brand",tags:["Gaming","Brand","Consumer","Fun"]},
+{n:"hala2034",e:".com",p:9000,t:"hot",c:"Brand",d:"Hala 2034 — brand aligned with Saudi Vision 2034 market opportunities",tags:["Saudi","Brand","Vision","2034"]},
+{n:"Agentgaze",e:".com",p:8900,t:"ai",c:"AI",d:"Agent gaze — AI computer vision, surveillance, or intelligent agent monitoring",tags:["AI","Agent","Vision","Monitoring"]},
+{n:"yourqwen",e:".com",p:7850,t:"ai",c:"AI",d:"Your Qwen — personal AI assistant brand, LLM-based product name",tags:["AI","LLM","Personal","Brand"]},
+{n:"Pkri",e:".com",p:7988,t:"ai",c:"Brand",d:"Short 4-letter .com brand — rare, versatile, investment-grade domain asset",tags:["Brand","Short","4-letter","Premium"]},
+{n:"Agentalgos",e:".com",p:7595,t:"ai",c:"AI",d:"Agent algorithms — AI agent trading and algorithmic automation platform",tags:["AI","Agent","Algorithm","FinTech"]},
+{n:"aibarcodebuilder",e:".com",p:6800,t:"new",c:"AI",d:"AI barcode builder — generate barcodes and QR codes with artificial intelligence",tags:["AI","Barcode","SaaS","Tools"]},
+{n:"promptcentre",e:".com",p:6888,t:"new",c:"AI",d:"Prompt centre — hub for prompt engineering and AI prompts library",tags:["AI","Prompt","LLM","Hub"]},
+{n:"hobacoin",e:".com",p:6288,t:"new",c:"Web3",d:"Hoba coin — crypto token, Web3 community or DeFi project brand",tags:["Crypto","Web3","Coin","DeFi"]},
+{n:"autocorrectbot",e:".com",p:6595,t:"new",c:"AI",d:"Auto-correct bot — AI writing assistant, grammar and text correction tool",tags:["AI","Bot","Writing","SaaS"]},
+{n:"VidaSky",e:".com",p:5666,t:"new",c:"Brand",d:"Vida Sky — lifestyle, wellness, travel, or SaaS brand name",tags:["Lifestyle","Brand","Travel","SaaS"]},
+{n:"privateapi",e:".io",p:5900,t:"ai",c:"Dev",d:"Private API — secure API gateway and developer tools platform",tags:["Dev","API","Security","B2B"]},
+{n:"parevero",e:".com",p:5175,t:"new",c:"Brand",d:"Coined Italian-style brand — food, wellness, or lifestyle startup name",tags:["Brand","Food","Lifestyle","Unique"]},
+{n:"Da5",e:".ai",p:4995,t:"new",c:"AI",d:"Short numeric AI name — versatile brand for AI-powered tools and apps",tags:["AI","Short","Numeric","Brand"]},
+{n:"TopSocial",e:".ai",p:4950,t:"new",c:"AI",d:"Top social AI — AI-driven social media management and analytics platform",tags:["AI","Social","Marketing","SaaS"]},
+{n:"ScanQuick",e:".ai",p:4850,t:"new",c:"AI",d:"Quick AI scanning — document AI, QR codes, barcodes, fast scan tools",tags:["AI","Scan","Quick","SaaS"]},
+{n:"neuropilot",e:".io",p:4900,t:"ai",c:"AI",d:"Neuro pilot — AI autopilot for neural networks and machine learning pipelines",tags:["AI","Neural","Pilot","ML"]},
+{n:"algorithmicflight",e:".com",p:4900,t:"new",c:"Tech",d:"Algorithmic flight — AI for aviation and flight optimization platform",tags:["Aviation","AI","Algorithm","Tech"]},
+{n:"appadministrator",e:".com",p:4995,t:"new",c:"SaaS",d:"App administrator — SaaS platform for app management and administration",tags:["SaaS","Admin","App","B2B"]},
+{n:"Etpstrategies",e:".com",p:4995,t:"new",c:"Finance",d:"ETP strategies — ETF and ETP investment strategy platform or fund brand",tags:["Finance","ETF","Strategy","Investment"]},
+{n:"truneed",e:".com",p:4900,t:"new",c:"Brand",d:"Tru need — authentic needs platform, gig economy or marketplace brand",tags:["Brand","Marketplace","Gig","Consumer"]},
+{n:"aiartlicensing",e:".com",p:4295,t:"new",c:"AI",d:"AI art licensing — platform to license and sell AI-generated artwork",tags:["AI","Art","License","Marketplace"]},
+{n:"Aiquality",e:".org",p:3975,t:"new",c:"AI",d:"AI quality — AI testing, quality assurance, and model benchmarking platform",tags:["AI","Quality","Testing","B2B"]},
+{n:"workflowmemory",e:".com",p:3988,t:"new",c:"AI",d:"Workflow memory — AI-powered workflow memory for productivity and automation",tags:["AI","Workflow","Memory","SaaS"]},
+{n:"quantumbuild",e:".org",p:3988,t:"new",c:"Tech",d:"Quantum build — quantum computing development and tools brand",tags:["Quantum","Build","Tech","Dev"]},
+{n:"mybots",e:".si",p:3988,t:"new",c:"AI",d:"My bots — personal AI bot builder and management platform brand",tags:["AI","Bot","Personal","Builder"]},
+{n:"Appagents",e:".io",p:3090,t:"new",c:"AI",d:"App agents — platform for building and deploying AI app agents",tags:["AI","Agent","App","Platform"]},
+{n:"PaulSolar",e:".com",p:3500,t:"std",c:"Energy",d:"Paul Solar — solar energy brand or personal solar business name",tags:["Energy","Solar","Green","Brand"]},
+{n:"Editprompt",e:".io",p:2888,t:"new",c:"AI",d:"Edit prompt — AI prompt editor and optimizer for LLM power users",tags:["AI","Prompt","Editor","LLM"]},
+{n:"trafficlawyerchicago",e:".com",p:2900,t:"std",c:"Legal",d:"Traffic lawyer Chicago — geo-targeted legal services domain asset",tags:["Legal","Local","Traffic","Chicago"]},
+{n:"agentssystems",e:".com",p:2900,t:"std",c:"AI",d:"Agent systems — multi-agent AI systems and infrastructure platform",tags:["AI","Agent","Systems","Infrastructure"]},
+{n:"wecher",e:".com",p:2895,t:"std",c:"Brand",d:"Wecher — short coined brand name for tech or consumer startup",tags:["Brand","Short","Tech","Unique"]},
+{n:"more-games",e:".com",p:2395,t:"std",c:"Gaming",d:"More games — gaming portal, game discovery, or publisher brand",tags:["Gaming","Portal","Consumer","Brand"]},
+{n:"Deeporo",e:".com",p:2190,t:"std",c:"AI",d:"Deeporo — deep AI brand, fintech or data analytics platform name",tags:["AI","Deep","Brand","Analytics"]},
+{n:"buildroot",e:".xyz",p:1999,t:"std",c:"Dev",d:"Build root — developer tools, open-source or build systems brand",tags:["Dev","Build","Open Source","Tools"]},
+{n:"call28",e:".com",p:1999,t:"std",c:"Brand",d:"Call 28 — communication, call center, or telecom brand name",tags:["Telecom","Brand","Call","Service"]},
+{n:"chinonline",e:".com",p:1995,t:"std",c:"Brand",d:"Chin online — e-commerce, online marketplace or brand portal",tags:["eCommerce","Brand","Online","China"]},
+{n:"Newyorkbistro",e:".com",p:1975,t:"std",c:"Food",d:"New York Bistro — restaurant, food brand or delivery service name",tags:["Food","Restaurant","NewYork","Brand"]},
+{n:"nded",e:".net",p:1880,t:"std",c:"Brand",d:"Short 4-letter .net brand — versatile for tech or service startup",tags:["Brand","Short","Net","Tech"]},
+{n:"humainmedical",e:".com",p:1900,t:"std",c:"Health",d:"Humain medical — AI-powered medical platform or health technology brand",tags:["Health","Medical","AI","Brand"]},
+{n:"aimonetize",e:".co",p:1900,t:"std",c:"AI",d:"AI monetize — platform to monetize AI tools, content or APIs",tags:["AI","Monetize","SaaS","Revenue"]},
+{n:"selfdriveos",e:".com",p:1900,t:"std",c:"Tech",d:"Self-drive OS — autonomous driving operating system brand name",tags:["Auto","OS","AI","Autonomous"]},
+{n:"agentstechno",e:".com",p:1900,t:"std",c:"AI",d:"Agent techno — AI agent technology solutions and services brand",tags:["AI","Agent","Tech","Brand"]},
+{n:"metricsonchain",e:".io",p:1900,t:"std",c:"Web3",d:"Metrics on-chain — blockchain analytics and on-chain data platform",tags:["Web3","Analytics","Blockchain","Data"]},
+{n:"x-t",e:".xyz",p:1795,t:"std",c:"Brand",d:"X-T — ultra-short brand for tech, fashion, or startup identity",tags:["Brand","Short","Tech","Fashion"]},
+{n:"codingalfa",e:".com",p:1699,t:"std",c:"Dev",d:"Coding alfa — alpha coding platform for developers and learners",tags:["Dev","Coding","Education","Brand"]},
+{n:"aidrivepilot",e:".com",p:1595,t:"std",c:"AI",d:"AI drive pilot — AI-powered driving or delivery management platform",tags:["AI","Drive","Pilot","Logistics"]},
+{n:"thesmartshops",e:".com",p:1595,t:"std",c:"eComm",d:"The smart shops — AI-powered e-commerce or smart retail brand",tags:["eCommerce","Smart","Retail","AI"]},
+{n:"saudi-travels",e:".com",p:1375,t:"std",c:"Travel",d:"Saudi travels — Saudi Arabia travel agency or tourism brand",tags:["Travel","Saudi","Tourism","Brand"]},
+{n:"cianalyst",e:".com",p:1295,t:"std",c:"Finance",d:"CI analyst — competitive intelligence or crypto intelligence brand",tags:["Finance","Analytics","CI","B2B"]},
+{n:"virtualxz",e:".com",p:1295,t:"std",c:"Tech",d:"Virtual XZ — virtual reality or extended reality brand name",tags:["VR","Tech","Virtual","Brand"]},
+{n:"arabichorses",e:".com",p:1490,t:"std",c:"Niche",d:"Arabic horses — premium equine marketplace or breeding portal brand",tags:["Equine","Niche","Arabic","Marketplace"]},
+{n:"travelin24",e:".com",p:1495,t:"std",c:"Travel",d:"Travel in 24 — 24-hour travel deals and express booking platform",tags:["Travel","Deals","Consumer","App"]},
+{n:"thegoldweb",e:".com",p:1150,t:"std",c:"Brand",d:"The gold web — premium web services or golden brand portal name",tags:["Brand","Web","Gold","Premium"]},
+{n:"lamapedia",e:".com",p:950,t:"std",c:"Brand",d:"Lama pedia — encyclopedia or AI knowledge base brand name",tags:["Brand","Knowledge","AI","Wiki"]},
+{n:"droneevents",e:".xyz",p:995,t:"std",c:"Tech",d:"Drone events — drone racing, shows and aerial entertainment brand",tags:["Drone","Events","Entertainment","Tech"]},
+{n:"internetwebsite",e:".xyz",p:900,t:"std",c:"Brand",d:"Internet website — meta brand for web services or portal platform",tags:["Brand","Web","Domain","Meta"]},
+{n:"myhd",e:".xyz",p:885,t:"std",c:"Brand",d:"My HD — personal HD media, streaming or storage brand name",tags:["Media","HD","Streaming","Consumer"]},
+{n:"yslox",e:".com",p:959,t:"std",c:"Brand",d:"Yslox — short coined brand for fashion, tech or lifestyle startup",tags:["Brand","Fashion","Lifestyle","Short"]},
+{n:"Energyz",e:".org",p:1275,t:"std",c:"Energy",d:"Energyz — clean energy or energy tech organization brand name",tags:["Energy","Green","Tech","Org"]},
+{n:"KetoBuilders",e:".com",p:675,t:"std",c:"Health",d:"Keto builders — keto diet, fitness or nutrition brand name",tags:["Health","Keto","Fitness","Consumer"]},
+{n:"uniquevideoproductions",e:".com",p:699,t:"std",c:"Media",d:"Unique video productions — video production company brand name",tags:["Media","Video","Production","Brand"]},
+{n:"whydeepseek",e:".com",p:575,t:"std",c:"AI",d:"Why DeepSeek — informational or community site about DeepSeek AI",tags:["AI","DeepSeek","Brand","Info"]},
+{n:"cloudpoint",e:".xyz",p:475,t:"std",c:"Tech",d:"Cloud point — cloud services or data point platform brand name",tags:["Cloud","Tech","Brand","SaaS"]},
+{n:"kalima",e:".xyz",p:375,t:"std",c:"Brand",d:"Kalima — Arabic word for word — media, content or multilingual brand",tags:["Arabic","Brand","Media","Content"]},
+{n:"sustainz",e:".org",p:375,t:"std",c:"ESG",d:"Sustainz — sustainability organization or ESG brand name",tags:["ESG","Sustainability","Green","Org"]},
+{n:"smartvirtual",e:".services",p:375,t:"std",c:"Tech",d:"Smart virtual services — virtual assistant or remote services brand",tags:["Virtual","Smart","Services","B2B"]},
+{n:"takeyourcoins",e:".com",p:275,t:"std",c:"Crypto",d:"Take your coins — crypto wallet, reward, or DeFi brand name",tags:["Crypto","Coins","DeFi","Brand"]},
+{n:"franceonline",e:".net",p:275,t:"std",c:"Brand",d:"France online — French market portal or European e-commerce brand",tags:["France","eCommerce","Brand","Europe"]},
+{n:"travelextensive",e:".com",p:250,t:"std",c:"Travel",d:"Travel extensive — travel blog, guide or extensive travel brand name",tags:["Travel","Blog","Brand","Guide"]},
+{n:"fixweb",e:".xyz",p:155,t:"std",c:"Dev",d:"Fix web — web repair, maintenance or bug-fix service brand name",tags:["Dev","Web","Fix","Service"]},
+/* الدومينات الجديدة */
+{n:"AGIResponsibility",e:".com",p:19000,t:"premium",c:"AI",d:"AGI Responsibility — premium domain for AI ethics, governance, and responsible AI platforms",tags:["AI","AGI","Ethics","Responsibility"]},
+{n:"AGIResponsibility",e:".org",p:22000,t:"premium",c:"AI",d:"AGI Responsibility organization — ideal for non-profit or research initiatives in AI safety and governance",tags:["AI","AGI","Ethics","Org"]},
+{n:"Abokhamsa",e:".com",p:2500,t:"std",c:"Brand",d:"Abokhamsa — unique brand name suitable for Saudi or Arabic market projects",tags:["Brand","Saudi","Arabic"]},
+{n:"Afritique",e:".com",p:1500,t:"std",c:"Brand",d:"Afritique — modern brand for African fashion, culture, or tech startups",tags:["Brand","Africa","Fashion"]},
+{n:"Agentnexis",e:".com",p:795,t:"std",c:"AI",d:"Agent Nexis — AI agent connection and networking platform brand",tags:["AI","Agent","Tech"]},
+{n:"AgentStatewide",e:".com",p:475,t:"std",c:"AI",d:"Agent Statewide — AI solutions for government or statewide services",tags:["AI","Agent","Government"]},
+{n:"Agikora",e:".com",p:388,t:"std",c:"Brand",d:"Agikora — short coined brand name for tech or consumer products",tags:["Brand","Short"]},
+{n:"Ainationality",e:".com",p:1299,t:"std",c:"AI",d:"AI Nationality — AI identity or cultural intelligence platform",tags:["AI","Identity"]},
+{n:"Aiquality",e:".xyz",p:3975,t:"new",c:"AI",d:"AI Quality — AI testing and quality assurance platform (xyz version)",tags:["AI","Quality","Testing"]},
+{n:"TelepathyData",e:".com",p:7000,t:"premium",c:"AI",d:"Telepathy Data — futuristic AI mind-reading or neural data platform",tags:["AI","Neural","Data"]},
+{n:"TelepathyExpert",e:".com",p:2788,t:"std",c:"AI",d:"Telepathy Expert — AI telepathy or advanced communication tools brand",tags:["AI","Communication"]},
+{n:"Tfz",e:".ai",p:1777,t:"std",c:"AI",d:"TFZ — ultra-short AI brand with high resale potential",tags:["AI","Short","Brand"]},
+{n:"TraitInfer",e:".com",p:9595,t:"ai",c:"AI",d:"Trait Infer — AI personality and trait inference platform",tags:["AI","Inference","Personality"]},
+{n:"Virtualface",e:".org",p:12199,t:"premium",c:"AI",d:"Virtual Face — virtual avatar and digital identity organization",tags:["AI","Avatar","Virtual"]},
+{n:"abaragh",e:".store",p:375,t:"std",c:"Brand",d:"Abaragh — Arabic-inspired brand for e-commerce or marketplace",tags:["Brand","Arabic","Store"]},
+{n:"agimaster",e:".tech",p:11200,t:"premium",c:"AI",d:"AGI Master — premium AI mastery and training platform",tags:["AI","AGI","Education"]},
+{n:"ai-season",e:".com",p:14995,t:"premium",c:"AI",d:"AI Season — seasonal AI tools or AI-powered content platform",tags:["AI","Seasonal"]},
+{n:"aicontrolrobots",e:".com",p:1375,t:"std",c:"AI",d:"AI Control Robots — robotics control and automation brand",tags:["AI","Robotics"]},
+{n:"aieducate",e:".co",p:2900,t:"std",c:"AI",d:"AI Educate — AI education and e-learning platform",tags:["AI","Education"]},
+{n:"aierrors",e:".dev",p:299,t:"std",c:"AI",d:"AI Errors — AI debugging and error analysis developer tool",tags:["AI","Dev","Debug"]},
+{n:"aierrors",e:".tech",p:299,t:"std",c:"AI",d:"AI Errors — AI error handling and monitoring platform",tags:["AI","Tech"]},
+{n:"aifuturetrading",e:".com",p:575,t:"std",c:"AI",d:"AI Future Trading — AI-powered trading and investment platform",tags:["AI","Trading","FinTech"]},
+{n:"barbaralabres",e:".com",p:4500,t:"std",c:"Brand",d:"Barbara Labres — personal or fashion brand name",tags:["Brand","Personal"]},
+{n:"belz",e:".xyz",p:199,t:"std",c:"Brand",d:"Belz — short modern brand for tech or lifestyle",tags:["Brand","Short"]},
+{n:"buildyourhook",e:".com",p:1900,t:"std",c:"Brand",d:"Build Your Hook — content creation or marketing hook builder",tags:["Brand","Marketing"]},
+{n:"candidrx",e:".app",p:900,t:"std",c:"Health",d:"Candid RX — honest health or pharmacy app brand",tags:["Health","App"]},
+{n:"candidrx",e:".dev",p:900,t:"std",c:"Health",d:"Candid RX — health tech developer tools",tags:["Health","Dev"]},
+{n:"classicgardendesign",e:".com",p:475,t:"std",c:"Brand",d:"Classic Garden Design — landscaping or garden services brand",tags:["Brand","Garden"]},
+{n:"economicparadigm",e:".com",p:475,t:"std",c:"Finance",d:"Economic Paradigm — economic analysis or fintech platform",tags:["Finance","Economy"]},
+{n:"ecosolartechnology",e:".com",p:2950,t:"std",c:"Energy",d:"Eco Solar Technology — green solar energy solutions",tags:["Energy","Solar","Green"]},
+{n:"electrabike",e:".xyz",p:98,t:"std",c:"Tech",d:"Electra Bike — electric bike or EV mobility brand",tags:["Tech","EV","Bike"]},
+{n:"firstdietician",e:".com",p:475,t:"std",c:"Health",d:"First Dietician — nutrition and diet consulting platform",tags:["Health","Nutrition"]},
+{n:"kxz",e:".ai",p:1777,t:"std",c:"AI",d:"KXZ — short premium AI brand",tags:["AI","Short"]},
+{n:"mextweb",e:".com",p:199,t:"std",c:"Brand",d:"Mext Web — next-generation web services brand",tags:["Brand","Web"]},
+{n:"mortgagebrokershouston",e:".com",p:2900,t:"std",c:"Finance",d:"Mortgage Brokers Houston — geo-targeted mortgage services",tags:["Finance","RealEstate","Houston"]},
+{n:"newyorklawyerservices",e:".com",p:1800,t:"std",c:"Legal",d:"New York Lawyer Services — legal services in New York",tags:["Legal","NewYork"]},
+{n:"pgssolar",e:".co.uk",p:2575,t:"std",c:"Energy",d:"PGS Solar — solar energy company in UK",tags:["Energy","Solar","UK"]},
+{n:"quantumboostglobal",e:".com",p:475,t:"std",c:"Tech",d:"Quantum Boost Global — quantum computing acceleration brand",tags:["Tech","Quantum"]},
+{n:"superiorcleaningtemecula",e:".com",p:475,t:"std",c:"Service",d:"Superior Cleaning Temecula — local cleaning services brand",tags:["Service","Cleaning"]},
+{n:"workflowcore",e:".io",p:2888,t:"new",c:"AI",d:"Workflow Core — core AI workflow automation platform",tags:["AI","Workflow"]},
+{n:"workflowsync",e:".io",p:995,t:"std",c:"AI",d:"Workflow Sync — AI workflow synchronization tool",tags:["AI","Workflow"]}
+];
+
 var TIERS={premium:{label:"&#9733; Premium",cls:"b-prem"},hot:{label:"&#128293; Hot",cls:"b-hot"},new:{label:"&#10022; New",cls:"b-new"},ai:{label:"&#9889; AI",cls:"b-ai"},std:{label:"&#9670; Std",cls:"b-std"}};
-var activeCat="All",visibleCount=24,carouselIdx=0,featuredList=[];
+
+var activeCat="All", currentPage = 1, itemsPerPage = 24;
+
 function esc(s){return s.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;")}
+
 function buildTicker(){var el=document.getElementById("tickerEl"),h="";for(var i=0;i<Math.min(20,DATA.length);i++){var d=DATA[i];h+='<span class="t-item"><span class="t-dn">'+esc(d.n+d.e)+'</span> <span class="t-pr">$'+d.p.toLocaleString()+'</span> <span>◆</span></span>'}el.innerHTML=h+h}
-function buildMarquee(){var el=document.getElementById("mqEl"),items=["AI Domains","Premium .ai","Top .com","Short Brands","Web3 Names","FinTech Domains","Investment Grade","Rare .si","Dev Tools","Saudi Vision","AI Agents","Clean Names"],h="";for(var i=0;i<items.length;i++)h+='<span class="mq-item'+(i%4===0?" lit":"")+'">'+items[i]+'<span class="mq-sep"> ◆ </span></span>';el.innerHTML=h+h}
-function buildCarousel(){var sorted=DATA.slice().sort(function(a,b){return b.p-a.p});featuredList=sorted.slice(0,8);var track=document.getElementById("cTrack"),dots=document.getElementById("cDots"),h="";for(var i=0;i<featuredList.length;i++){var d=featuredList[i],t=TIERS[d.t],tags="";for(var j=0;j<Math.min(4,d.tags.length);j++)tags+='<span class="f-tag">'+esc(d.tags[j])+'</span>';var dn=esc(d.n+d.e);h+='<div class="f-card"><div class="f-badge-row"><span class="badge '+t.cls+'">'+t.label+'</span><span class="badge b-ai">'+esc(d.c)+'</span></div><div class="f-name">'+esc(d.n)+'<span class="f-ext">'+esc(d.e)+'</span></div><div class="f-desc">'+esc(d.d)+'</div><div class="f-tags">'+tags+'</div><div class="f-footer"><div><div class="lbl-sm">ASKING PRICE</div><div class="f-price">$'+d.p.toLocaleString()+'</div></div><button class="btn-buy" onclick="pickDomain(\''+dn+'\')">Buy Now &#8594;</button></div></div>';var dot=document.createElement("div");dot.className="c-dot"+(i===0?" on":"");dots.appendChild(dot)}track.innerHTML=h}
-function slideCarousel(dir){if(!featuredList.length)return;carouselIdx=(carouselIdx+dir+featuredList.length)%featuredList.length;var card=document.querySelector(".f-card");if(!card)return;var w=card.offsetWidth+18;document.getElementById("cTrack").style.transform="translateX("+-carouselIdx*w+"px)";var dots=document.querySelectorAll(".c-dot");for(var i=0;i<dots.length;i++)dots[i].classList.toggle("on",i===carouselIdx)}
-function buildFilters(){var cats=["All"],seen={};for(var i=0;i<DATA.length;i++)if(!seen[DATA[i].c]){cats.push(DATA[i].c);seen[DATA[i].c]=1}var row=document.getElementById("filterRow");for(var i=0;i<cats.length;i++){(function(c){var b=document.createElement("button");b.className="f-btn"+(c==="All"?" on":"");b.textContent=c==="All"?"All Categories":c;b.onclick=function(){activeCat=c;visibleCount=24;document.querySelectorAll(".f-btn").forEach(function(x){x.classList.remove("on")});b.classList.add("on");renderGrid()};row.appendChild(b)})(cats[i])}}
-function getFiltered(){var q=(document.getElementById("searchQ").value||"").toLowerCase(),sort=document.getElementById("sortSel").value,seen={},list=[];for(var i=0;i<DATA.length;i++){var d=DATA[i],key=d.n+d.e;if(seen[key])continue;seen[key]=1;var mc=activeCat==="All"||d.c===activeCat,mq=true;if(q){mq=false;if((d.n+d.e).toLowerCase().indexOf(q)>-1)mq=true;if(!mq&&d.d.toLowerCase().indexOf(q)>-1)mq=true;if(!mq&&d.c.toLowerCase().indexOf(q)>-1)mq=true;if(!mq)for(var j=0;j<d.tags.length;j++)if(d.tags[j].toLowerCase().indexOf(q)>-1){mq=true;break}}if(mc&&mq)list.push(d)}if(sort==="price-asc")list.sort(function(a,b){return a.p-b.p});else if(sort==="name")list.sort(function(a,b){return a.n.toLowerCase()<b.n.toLowerCase()?-1:1});else list.sort(function(a,b){return b.p-a.p});return list}
-function renderGrid(){var list=getFiltered();document.getElementById("rCount").textContent=list.length;document.getElementById("navCount").textContent=list.length;var grid=document.getElementById("dGrid");grid.innerHTML="";var slice=list.slice(0,visibleCount);for(var i=0;i<slice.length;i++){var d=slice[i],t=TIERS[d.t],tags="";for(var j=0;j<Math.min(3,d.tags.length);j++)tags+='<span class="d-tag">'+esc(d.tags[j])+'</span>';var dn=esc(d.n+d.e),el=document.createElement("div");el.className="d-card";el.innerHTML='<div class="d-top"><div class="d-name">'+esc(d.n)+'<span class="d-ext">'+esc(d.e)+'</span></div><span class="d-tier '+t.cls+'">'+t.label+'</span></div><div class="d-desc">'+esc(d.d)+'</div><div class="d-tags">'+tags+'</div><div class="d-foot"><div class="d-price">$'+d.p.toLocaleString()+'<span class="d-usd"> USD</span></div><button class="btn-d" onclick="pickDomain(\''+dn+'\')">Buy &#8594;</button></div>';grid.appendChild(el)}document.getElementById("loadBtn").style.display=visibleCount>=list.length?"none":"block"}
-function loadMore(){visibleCount+=24;renderGrid()}
-function pickDomain(v){document.getElementById("domainField").value=v;document.getElementById("contact").scrollIntoView({behavior:"smooth"})}
-document.getElementById("submitBtn").onclick=function(){var btn=this;btn.textContent="Inquiry Sent!";btn.style.background="linear-gradient(135deg,#10b981,#059669)";setTimeout(function(){btn.textContent="Send Inquiry";btn.style.background=""},3000)};
-document.getElementById("prevBtn").onclick=function(){slideCarousel(-1)};
-document.getElementById("nextBtn").onclick=function(){slideCarousel(1)};
-document.getElementById("searchQ").oninput=function(){renderGrid()};
-document.getElementById("sortSel").onchange=function(){renderGrid()};
-document.addEventListener("mousemove",function(e){var px=(e.clientX/window.innerWidth-0.5)*28,py=(e.clientY/window.innerHeight-0.5)*28,orbs=document.querySelectorAll(".orb");for(var i=0;i<orbs.length;i++){var f=(i+1)*0.4;orbs[i].style.transform="translate("+(px*f)+"px,"+(py*f)+"px)"}});
-setInterval(function(){slideCarousel(1)},4500);
-buildTicker();buildMarquee();buildCarousel();buildFilters();renderGrid();
+
+function buildMarquee(){var el=document.getElementById("mqEl"),items=["AI Domains","Premium .ai","Top .com","Short Brands","Web3 Names","FinTech Domains","Investment Grade","Rare .si","Dev Tools",],h="";for(var i=0;i<items.length;i++)h+='<span class="mq-item'+(i%4===0?" lit":"")+'">'+items[i]+'<span class="mq-sep"> ◆ </span></span>';el.innerHTML=h+h}
+
+function renderGrid(){
+  var q=(document.getElementById("searchQ").value||"").toLowerCase();
+  var sort=document.getElementById("sortSel").value;
+  var list = DATA.filter(d => {
+    if(!q) return true;
+    return (d.n + d.e + d.d + d.c).toLowerCase().includes(q);
+  });
+
+  if(sort==="price-asc") list.sort((a,b)=>a.p-b.p);
+  else if(sort==="name") list.sort((a,b)=>a.n.toLowerCase().localeCompare(b.n.toLowerCase()));
+  else list.sort((a,b)=>b.p-a.p);
+
+  var grid = document.getElementById("dGrid");
+  grid.innerHTML = "";
+
+  list.forEach(d => {
+    var t = TIERS[d.t] || TIERS.std;
+    var el = document.createElement("div");
+    el.className = "d-card";
+    el.innerHTML = `
+      <div class="d-top">
+        <div class="d-name">${esc(d.n)}<span class="d-ext">${esc(d.e)}</span></div>
+        <span class="d-tier ${t.cls}">${t.label}</span>
+      </div>
+      <div class="d-desc">${esc(d.d)}</div>
+      <div class="d-foot">
+        <div class="d-price">$${d.p.toLocaleString()}<span class="d-usd"> USD</span></div>
+        <button class="btn-d" onclick="pickDomain('${d.n+d.e}')">Buy &#8594;</button>
+      </div>
+    `;
+    grid.appendChild(el);
+  });
+
+  document.getElementById("navCount").textContent = DATA.length;
+}
+
+function pickDomain(v){
+  if(v) window.open(AFTERNIC_BASE + encodeURIComponent(v), "_blank");
+}
+
+// Event Listeners
+document.getElementById("searchQ").oninput = renderGrid;
+document.getElementById("sortSel").onchange = renderGrid;
+
+// Initialize
+buildTicker();
+buildMarquee();
+renderGrid();
 </script>
 </body>
 </html>
